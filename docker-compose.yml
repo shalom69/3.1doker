@@ -1,13 +1,11 @@
-version: '3.7'
+version: '3.1'
 services:
-  postgres:
-    image: postgres:12.0-alpine
+  db:
+    image: library/postgres:12-alpine
+    restart: always
     ports:
-      - 3306:3306
-    volumes:
-      - ./postgres_data:/var/lib/postgres
+      - 5433:5432
     environment:
-      -e MYSQL_RANDOM_ROOT_PASSWORD=yes 
-      -e MYSQL_DATABASE=app 
-      -e MYSQL_USER=app 
-      -e MYSQL_PASSWORD=9mREsvXDs9Gk89Ef
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: 12345678
+        POSTGRES_DB: postgres
