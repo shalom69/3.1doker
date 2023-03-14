@@ -4,7 +4,7 @@ services:
     image: library/postgres:12-alpine
     restart: always
     ports:
-      - 3306:5432
+      - 5432:5432
     environment:
         POSTGRES_USER: postgres
         POSTGRES_PASSWORD: 12345678
